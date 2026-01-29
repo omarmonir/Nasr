@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .odd{
+            background-color: lightgray;
+        }
+        .even{
+            background-color: lightblue;
+        }
+    </style>
+    <script>
+        //using document.write to write to the HTML document | document writeline
+        // document.write("Hello World<br>");
+        // document.writeln("Hello World with new line<br>");
+        var arr = [10,20,30,40,50,60,70,80];
+        var sum = 0;
+        document.write("<table border='1' align='center' cellspacing='10' cellpadding='10'><tr><th>Values</th></tr>");
+        for(var i=0;i<arr.length;i++){
+            sum += arr[i];
+            if(i%2==0)
+                document.write("<tr class='even' align='center'><td>" + arr[i] + "</td></tr>");
+            else
+            document.write("<tr class='odd' align='center'><td>" + arr[i] + "</td></tr>");
+        }
+        document.write("<tr><th>Summation = "+sum+"</th></tr>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
