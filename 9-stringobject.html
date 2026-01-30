@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        /*
+        Methoss of String Object
+        1- length : property to get the length of the string
+        2-charAt(index): method to get character at specific index
+        3-indexOf(substring, startIndex): method to get the index of the first occurrence of substring starting from startIndex (optional)
+        4-lastIndexOf(substring, startIndex): method to get the index of the last occurrence of substring starting from startIndex (optional)
+        5-substring(startIndex, endIndex): method to get the substring from startIndex to endIndex (not including endIndex) (does not support negative indices) 
+        6-substr(startIndex, length): method to get the substring from startIndex with the specified length including negative startIndex as offset from the end
+        7-slice(startIndex, endIndex): method to get the substring from startIndex to endIndex (not including endIndex), supports negative indices
+        8-split(separator): method to split the string into an array of substrings based on the separator
+        9-replace(oldSubstring, newSubstring): method to replace the first occurrence of oldSubstring with newSubstring
+        10replace(regex, newSubstring): method to replace all occurrences matching the regex with newSubstring
+        // /pattern/[flags ex:g global search,i insenstive,m]
+        11-toUpperCase(): method to convert the string to uppercase
+        12-toLowerCase(): method to convert the string to lowercase
+        14-bold(): method to make the string bold (HTML)
+        15-italics(): method to italicize the string (HTML)
+        16-fontcolor(color): method to change the font color of the string (HTML)
+        */
+       //string is immutable
+        var str = "ITI NasrCity Branch";
+        var result = "";
+        for (let index = 0; index < str.length; index++) {
+            if(str[index].toLocaleLowerCase()=== str[index]){
+                result += str[index].toLocaleUpperCase();
+
+            }else{
+                result += str[index].toLocaleLowerCase();
+            }
+            
+        }
+        str = result;
+        console.log(str);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
