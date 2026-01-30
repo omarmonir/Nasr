@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        //function declaration
+        // function myfunc(){
+        //     // alert("Hello from myfunc");
+        //     //return; // return undefined
+        //     return "From myfunc";
+        // }
+        // //function call : functionname()
+
+        // function Sum(x, y){
+        //     return x + y;
+        // }
+        //Sum(10,20,30); //30 is ignored return 30
+        //Sum(10); //y is undefined => NaN
+        //there is no function overloading in JavaScript
+
+        //any function (function statement or function expertion) in es5 has two members : arguments (array like collection) , this(calling object)
+        
+
+        // function myfunc(){
+        //     console.log(arguments);
+        //     // arguments.forEach(element => {
+        //     //     console.log(element);
+        //     // }); // TypeError: arguments.forEach is not a function
+        // }
+        
+        
+        // function Sum(x,y){
+        //     // return x+y;
+        //     var total = 0;
+        //     for(var i=0; i<arguments.length; i++){
+        //         total += arguments[i];
+        //     }
+        //     return total;
+        // }
+
+
+        var Id = -100;
+        var Name = "Mohamed";
+        // var student= {
+        //     Id: 100,
+        //     Name: "Ahmed",
+        //     Print: function(){
+        //         console.log("Id: " + Id + ", Name: " + Name);
+        //     }
+        // }
+        var student= {
+            Id: 100,
+            Name: "Ahmed",
+            Print: function(){
+                console.log(arguments);
+                console.log("Id: " + this.Id + ", Name: " + this.Name);
+            }
+        }
+        student.Print();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
