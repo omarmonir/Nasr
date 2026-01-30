@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <!-- <script>
+        /*
+        Math Object Methods:
+        1- Math.round(x): returns the value of x rounded to its nearest integer
+        2- Math.ceil(x): returns the value of x rounded up to its nearest integer
+        3- Math.floor(x): returns the value of x rounded down to its nearest integer
+        4- Math.trunc(x): returns the integer part of x by removing any fractional digits
+        5- Math.sign(x): returns if x is negative, null or positive
+        6- Math.pow(x,y): returns the value of x to the power of y
+        7- Math.sqrt(x): returns the square root of x
+        8- Math.min(x1,x2,...,xn): returns the lowest value among the given numbers
+        9- Math.max(x1,x2,...,xn): returns the highest value among the given numbers
+        10- Math.random(): returns a random number between 0 (inclusive) and 1 (exclusive)
+        */
+        // var num = -5.67;
+        // console.log("Original number: " + num);
+        // console.log("Math.round(): " + Math.round(num));
+        // console.log("Math.ceil(): " + Math.ceil(num));
+        // console.log("Math.floor(): " + Math.floor(num));
+        // console.log("Math.trunc(): " + Math.trunc(num));
+        // console.log("Math.sign(): " + Math.sign(num));
+        // console.log("Math.pow(2,3): " + Math.pow(2,3));
+        // console.log("Math.sqrt(16): " + Math.sqrt(16));
+        // console.log("Math.min(10, -5, 20, 0): " + Math.min(10, -5, 20, 0));
+        // console.log("Math.max(10, -5, 20, 0): " + Math.max(10, -5, 20, 0));
+        // console.log("Math.random(): " + Math.random());
+        // console.log("Math.random() * 100: " + Math.floor(Math.random() * 100));
+    </script> -->
+</head>
+<body>
+    <script>
+         function getRandomInt(min, max) {
+
+            return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is exclusive and the minimum is inclusive
+        }
+        console.log("Random integer between 50 and 100: " + getRandomInt(50, 100));
+        var colors = ["Red", "Green", "Blue", "Yellow", "Purple", "Orange"];
+        var randomIndex = getRandomInt(0, colors.length-1);
+        document.body.style.backgroundColor = colors[randomIndex];
+    </script>
+</body>
+</html>
