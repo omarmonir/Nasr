@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        /*
+        For Adding : updating original array 
+        1-push(element): method to add an element at the end of the array
+        2-unshift(element): method to add an element at the beginning of the array
+        3-splice(startIndex, deleteCount, item1, item2,...): method to add/remove elements at specific index
+        */ 
+        /*
+        For Removing : updating original array
+            1-pop(): method to remove the last element from the array
+            2-shift(): method to remove the first element from the array
+        */
+        // var arr = [10,20,30,40,50,60];
+        // arr.push(70);//add at the end
+        // arr.unshift(70);//add at the end
+        // arr.splice(2,0,100,200,300);//add at index 3 without removing any element
+        // arr.splice(2,3);//remove 3 elements from index 2
+        // arr.pop();//remove last element
+        // arr.shift();//remove first element
+        // console.log(arr);
+
+        // arr.reverse();//reverse the array
+        // console.log(arr);
+
+        // var arr = [-10, 100, 50, 200, -30, 400, 150];
+        // console.log("array before sort: ");
+        // console.table(arr);
+        //sort
+
+        // function mysorter(x,y){
+        //     if(x>y)
+        //         return 100;
+        //     else if(x<y)
+        //         return -100;
+        //     else 
+        //         return 0;
+        // }
+        //descending order
+        // function mysorter(x,y){ 
+        //     if(x>y)
+        //         return -100;
+        //     else if(x<y)
+        //         return 100;
+        //     else 
+        //         return 0;
+        // }
+        // arr.sort();//sort ascii values
+        // arr.sort(mysorter);
+        // arr.sort(  function (x,y){
+        //     if(x>y)
+        //         return 100;
+        //     else if(x<y)
+        //         return -100;
+        //     else 
+        //         return 0;
+        // });
+
+        // arr.sort(function (x,y){
+        //     return x - y; //ascending order
+        //     //return y - x; //descending order
+        // });
+        // console.log("array after sort: ");
+        // console.table(arr);
+
+
+        // var arr = [18, 2, 30, 4, 5, 60, 7, 8, 99, 10];
+        //select odd numbers from the array return selected numbers in new array
+        // var   oddarr =  [];
+        // function isodd(num){
+        //     return num % 2 != 0;
+        // }
+        // for(var i=0;i<arr.length;i++){
+        //     if(isodd(arr[i])){
+        //         oddarr.push(arr[i]);
+        //     }
+        // }
+
+        // var oddarr = arr.filter(isodd);
+        // var oddarr = arr.filter(function(num){return num % 3 == 0;})
+        //                 .sort(function(x,y){return x - y;})
+        //                 .reverse();
+        // oddarr.sort(function(x,y){
+        //     return x - y;
+        // });
+        // console.log("odd numbers array using for loop: ");
+        // console.table(oddarr);
+
+
+        // var arr = [100,-200,300,400,-500];
+        // arr.filter(function(x){return x>=100}).forEach(function(val){
+        //     console.log("value: " + val);
+        // });
+
+        // var arr = [1,2,3,4,5];
+        // var sum = arr.reduce(function(p, c){
+        //     return p += c;
+        // }, 10);
+
+        // var names = ["John", "Alice", "Bob", "Mary"];
+        // var concatenatedNames = names.reduce(function(accumulator, currentName) {
+        //     return accumulator + ", " + currentName;
+        // });
+        // var concatenatedNames = names.reduceRight(function(accumulator, currentName) {
+        //     return accumulator + ", " + currentName;
+        // });
+
+
+        // var arr = [5, 10, 15, 20, 25];
+        // arr.slice();//new version of original array
+        // var newarr = arr.slice(1,4);//new array from index 1 to index 3
+        // var newarr2 = arr.join(" - ");//string of array elements joined with separator
+        // console.log("new array using slice: "); 
+        // console.table(newarr2);
+        //map creates a new array by performing a function on each array element
+        // var names = ["John", "Alice", "Bob", "Mary", "Steve"];
+        //[John@iti.gov.eg]
+        // var emailarr = names.map(function(name){
+        //     return name + "@iti.gov.eg";
+        // });
+
+        // var salaries = [10, 20, 30, 40, 50];
+        // var updatedsalaries = salaries.map(function(sal){
+        //     return sal + (sal * 0.1);
+        // });
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
