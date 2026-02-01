@@ -1,52 +1,107 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>title for page</title>
+    <title>DOM Example Page</title>
     <script>
-        //document.title
-        //document.childNodes
-        //document.childNodes[0].childNodes
-        //document.childNodes[0].childNodes[2]
-        //document.childNodes[0].childNodes[2].childNodes
-        //document.childNodes[0].childNodes[2].childNodes[1].innerText = "iti";
-        //document.childNodes[0].childNodes[2].childNodes[1].style
-        //document.childNodes[0].childNodes[2].childNodes[5].childNodes[2].nodeType
-        //document.childNodes[0].childNodes[2].childNodes[7].nodeType
-        //document.childNodes[0].childNodes[2].childNodes[7].nodeName UpperCase
-        //document.childNodes[0].childNodes[2].childNodes[5].style.border="1px solid red"
-        //document.childNodes[0].childNodes[2].childNodes[5].childNodes[1].childNodes[1].parentNode
-        //document.childNodes[0].childNodes[2].childNodes[5].childNodes[1].childNodes[1].parentNode.parentNode.nextElementSibling
-        //document.childNodes[0].childNodes[2].childNodes[5].childNodes[1].childNodes[1].parentNode.parentNode.nextSibling
-        //document.childNodes[0].childNodes[2].childNodes[5].childNodes[1].childNodes[1].parentNode.parentNode.previousElementSibling
-        //document.childNodes[0].childNodes[2].childNodes[5].childNodes[1].childNodes[1].parentNode.parentNode.previousSibling
-        //document.childNodes[0].childNodes[2].childNodes[5].childNodes[1].childNodes[1].parentNode.parentNode.nextElementSibling.nextElementSibling.attributes
-        //document.childNodes[0].childNodes[2].childNodes[5].childNodes[1].childNodes[1].parentNode.parentNode.nextElementSibling.nextElementSibling.hasAttribute = "id"
+        /*
+        ===============================
+        DOM EXPLORATION & METHODS
+        ===============================
 
+        1️⃣ document → Root object of the DOM
+        2️⃣ childNodes → returns ALL child nodes (elements + text + comments)
+        3️⃣ children → returns element nodes only (safer)
+        4️⃣ parentNode / parentElement → access parent node or parent element
+        5️⃣ nextSibling / previousSibling → may include text nodes
+        6️⃣ nextElementSibling / previousElementSibling → elements only
+        7️⃣ firstChild / lastChild → first or last child (may be text)
+        8️⃣ firstElementChild / lastElementChild → first or last element child
+        9️⃣ nodeType → 1 = element, 3 = text, 8 = comment
+        10️⃣ nodeName → returns tag name in uppercase for elements
+        11️⃣ hasAttribute("attr") → checks if an element has a specific attribute
+        12️⃣ style → access inline styles
+        13️⃣ innerText / innerHTML → get or set content
+        14️⃣ querySelector / querySelectorAll → select elements using CSS selectors
+        15️⃣ getElementById / getElementsByClassName / getElementsByTagName → classic selectors
+        16️⃣ images → collection of all <img> elements
+        17️⃣ links → collection of all <a> elements
+        18️⃣ forms → collection of all forms
+        19️⃣ CRUD operations → Create, Read, Update, Delete
+        */
 
-        //document.children[0].children[1].children[4].elements
-        //document.children[0].children[1].children[4].elements[2].options[2].selected
-        //document.children[0].children[1].firstChild
-        //document.children[0].children[1].firstElementChild
-        //document.children[0].children[1].lastChild
-        //document.children[0].children[1].lastElementChild
+        // Access the title
+        console.log(document.title); 
 
+        // Access all child nodes of document (includes text nodes)
+        console.log(document.childNodes);
 
-        //document.images
-        //document.images[0].style.border="1px solid red"
+        // Access children of <html>
+        console.log(document.childNodes[0].childNodes);
 
-        //document.links[0].innerText="search"
-        //document.links[0].href="https://www.facebook.com"
+        // Access <body> node (usually index 2, beware of text nodes)
+        console.log(document.childNodes[0].childNodes[2]);
 
+        // Access all child nodes of <body>
+        console.log(document.childNodes[0].childNodes[2].childNodes);
 
-        //document.getElementById("firstdiv") element | null
-        //document.getElementsByClassName("iti").length
-        //document.getElementsByTagName("p")
-        //document.querySelectorAll("p[class]")
+        // Change inner text of second <p> inside body
+        document.childNodes[0].childNodes[2].childNodes[1].innerText = "ITI";
 
-        //CRUD operation
-        //Create, Read, Update, Delete
-        </script>
+        // Access style object
+        document.childNodes[0].childNodes[2].childNodes[1].style.color = "blue";
+
+        // Check nodeType
+        console.log(document.childNodes[0].childNodes[2].childNodes[5].childNodes[2].nodeType);
+        console.log(document.childNodes[0].childNodes[2].childNodes[7].nodeType);
+
+        // Node name in uppercase
+        console.log(document.childNodes[0].childNodes[2].childNodes[7].nodeName);
+
+        // Add border to a div
+        document.childNodes[0].childNodes[2].childNodes[5].style.border = "1px solid red";
+
+        // Navigate parent nodes
+        let pNode = document.childNodes[0].childNodes[2].childNodes[5].childNodes[1].childNodes[1];
+        console.log(pNode.parentNode);         // parentNode
+        console.log(pNode.parentNode.parentNode); // grandparent
+        console.log(pNode.parentNode.parentNode.nextElementSibling); // next element sibling
+        console.log(pNode.parentNode.parentNode.previousElementSibling); // previous element sibling
+
+        // Attributes
+        let form = pNode.parentNode.parentNode.nextElementSibling.nextElementSibling;
+        if(form) {
+            console.log(form.attributes); // all attributes
+            console.log(form.hasAttribute("id")); // check if it has 'id'
+        }
+
+        // Using children instead of childNodes (safer)
+        let bodyChildren = document.children[0].children[1]; // <body>
+        console.log(bodyChildren.children[4].elements); // access form elements
+        console.log(bodyChildren.children[4].elements[2].options[2].selected); // check select option
+
+        // First & last child vs element
+        console.log(bodyChildren.firstChild);       // may be text
+        console.log(bodyChildren.firstElementChild); // first element
+        console.log(bodyChildren.lastChild);        // may be text
+        console.log(bodyChildren.lastElementChild); // last element
+
+        // Images & links
+        console.log(document.images);
+        document.images[0].style.border = "1px solid red";
+
+        console.log(document.links);
+        document.links[0].innerText = "search";
+        document.links[0].href = "https://www.facebook.com";
+
+        // Selectors
+        console.log(document.getElementById("firstdiv")); // single element
+        console.log(document.getElementsByClassName("iti").length); // HTMLCollection
+        console.log(document.getElementsByTagName("p")); // all <p> tags
+        console.log(document.querySelectorAll("p[class]")); // all <p> with class
+
+    </script>
 </head>
 <body>
     <p class="iti">phone</p>
@@ -74,15 +129,17 @@
             <option>optionfive</option>
         </select>
         <input type="submit"><br/>
-    </form> <br/>
+    </form>
+    <br/>
     <form action="" id="formtwoid" name="formonename">
         <input type="text"><br/>
         <input type="password"><br/>
         <input type="submit"><br/>
-    </form> <br/>
+    </form>
+    <br/>
     <img src="Resourses/download (2).jpg" width="200px"/><br/>
     <img src="Resourses/download.jpg" width="200px" /><br/>
-    <a href="https://www.google.com">google</a> <br/>
-    <a href="https://www.yahoo.com">yahoo</a> <br/> 
+    <a href="https://www.google.com">google</a><br/>
+    <a href="https://www.yahoo.com">yahoo</a><br/>
 </body>
 </html>
