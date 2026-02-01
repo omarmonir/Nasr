@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        #mainwrapper{
+            width: 800px;
+            border: 1px solid black;
+            margin: 10px auto;
+            padding: 10px;
+            text-align: center;
+
+        }
+        #imgwrapper{
+            width: 600px;
+            margin: 10px auto;
+        }
+       
+        #controlswrapper{
+           border: 1px solid black;
+           padding: 10px;
+           margin: 10px auto;
+           text-align: center;
+        }
+        input{
+            width: 100px;
+            padding: 5px;
+            font-weight: bold;
+            margin-inline: 10px;
+            border-radius: 10px;
+        }
+        input:focus{
+            background-color: pink;
+        }
+        img{
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+    <div id="mainwrapper">
+        <div id="imgwrapper">
+            <img src="Resources/acce4d12026b2744fb711d68de20b3b9.jpg" id="myimg">
+        </div>
+        <div id="controlswrapper">
+            <input type="button" value="Start" onclick="startshow()">
+            <input type="button" value="Next" onclick="nextimg()">
+            <input type="button" value="Prev" onclick="previmg()">
+            <input type="button" value="Stop" onclick="stopshow()">
+        </div>
+    </div>
+
+    <script>
+        var imgsources = [
+            "Resources/acce4d12026b2744fb711d68de20b3b9.jpg",
+            "Resources/Screenshot (4).png",
+            "Resources/5884151272385396834_121.jpg",
+            "Resources/acce4d12026b2744fb711d68de20b3b9.jpg",
+            "Resources/Screenshot (4).png",
+            "Resources/5884151272385396834_121.jpg"
+        ];
+        var currentindex = 0;
+        var intervalhandler;
+
+        function showimg(index){
+            var imgElement = document.getElementById("myimg");
+            imgElement.src = imgsources[index];
+        }
+
+        function nextimg(){
+            currentindex++;
+            if(currentindex >= imgsources.length){
+                currentindex = 0;
+            }
+            showimg(currentindex);
+        }
+
+        function previmg(){
+            currentindex--;
+            if(currentindex < 0){
+                currentindex = imgsources.length - 1;
+            }
+            showimg(currentindex);
+        }
+
+        function startshow(){
+            intervalhandler = setInterval(nextimg, 2000);
+        }
+
+        function stopshow(){
+            clearInterval(intervalhandler);
+        }
+    </script>
+</body>
+</html>

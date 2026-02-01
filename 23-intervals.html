@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        // var today = new Date();
+        // document.title = today.toLocaleTimeString();
+        
+        function DisplayTime(){
+            var today = new Date();
+            document.title = today.toLocaleTimeString();
+        }
+        function starttimerfunc(){
+           DisplayTime();
+           t =  setInterval(DisplayTime,1000);//return reference to this interval : handeler
+        }
+        function stoptimerfunc(){
+            clearInterval(t);
+        }
+        setTimeout("alert('hi')",5000);
+    </script>
+</head>
+<body>
+    <input type="button" value="starttimer" onclick="starttimerfunc()">
+    <input type="button" value="stoptimer" onclick="stoptimerfunc()">
+</body>
+</html>

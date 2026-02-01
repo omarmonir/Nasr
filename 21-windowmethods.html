@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+          var student = {
+            ID:10,
+            Name:"Alice",
+            Address: {
+                Street:"123 Main St",
+                City:"Wonderland",
+                ZipCode:"12345"
+            },
+            courses: [
+                { CourseID:101, CourseName:"Math" },
+                { CourseID:102, CourseName:"Science" }
+            ],
+            Print: function (){return "Hello from Student Object";}
+        };
+        //open(url,target,options) => return reference to the new window
+        function openchildwindow(){
+            child = open("22-childwindow.html","ChildWindow","width=200,height=200");
+        }
+        function closechildwindow(){
+            child.close();//close child window
+        }
+
+        //scrollTo(x,y)  (0,200) | scrollBy(0,200) : scroll the window to specific position
+        //resizeTo | resizeBy : resize the window to specific size
+        //moveTo | moveBy : move the window to specific position
+
+        function scrollchildwindow(){
+            // child.scrollTo(0,50);
+            child.scrollBy(0,50);
+        }
+
+        function movechildwindow(){
+            // child.moveTo(0,50);
+            child.moveBy(0,50);
+            child.focus(); //bring child window to front 
+        }
+    </script>
+</head>
+<body style="background-color: lightgrey;">
+    <h4 style="text-align: center;">Parent Window</h4>
+    <input type="button" value="open child" onclick="openchildwindow();">
+    <input type="button" value="close child" onclick="closechildwindow();">
+    <input type="button" value="scroll child" onclick="scrollchildwindow();">
+    <input type="button" value="move child" onclick="movechildwindow();">
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        // var student = {
+        //     ID:10,
+        //     Name:"Alice",
+        //     Address: {
+        //         Street:"123 Main St",
+        //         City:"Wonderland",
+        //         ZipCode:"12345"
+        //     },
+        //     courses: [
+        //         { CourseID:101, CourseName:"Math" },
+        //         { CourseID:102, CourseName:"Science" }
+        //     ],
+        //     Print: function (){return "Hello from Student Object";}
+        // };
+        //we deal with object with small latter object and capital latter is the prototype of all objects in js 
+
+        // alert(), confirm(), prompt(), console.log() are the methods of window object
+
+        //  window.alert("Hello World!");
+
+        //student is global object so we can access student object using window object
+        // console.log(window.student.Address.City); // Wonderland
+        //student["Name"] can also be used to access properties of object
+
+        // var arr = [ 100, 200, 300, 400 ];
+
+        // for (var i in arr) {
+        //     console.log(arr[i]);
+        // }
+
+        // for (var i in window) {
+        //     document.write(i + ":" + window[i]+ "<br/>");
+        // }
+        
+        function myfunc(){
+            console.log(this);
+        }
+        myfunc();//window.myfunc()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
