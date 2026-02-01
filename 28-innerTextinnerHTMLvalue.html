@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Defines character encoding -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes the page responsive -->
+
+    <title>DOM InnerText vs InnerHTML</title>
+
+    <style>
+        /*
+        Styling the div element
+        */
+        div{
+            width: 400px;
+            height: 300px;
+            border: 2px solid black;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+
+    <script>
+        /*
+        ==============================
+        DOM CONTENT PROPERTIES
+        ==============================
+
+        1️⃣ innerText
+           - Gets or sets the visible text only
+           - Ignores HTML tags
+
+        2️⃣ innerHTML
+           - Gets or sets HTML content
+           - Parses HTML tags
+
+        3️⃣ outerHTML
+           - Gets or replaces the element itself with its HTML
+        */
+
+        // document.getElementsByTagName("div")[0].innerText
+        // Reads only the text inside the div
+
+        // document.getElementsByTagName("div")[0].innerHTML
+        // Reads HTML + text inside the div
+
+        // document.getElementsByTagName("div")[0].innerHTML = "<h2>Mohamed</h2>"
+        // Replaces div content with new HTML
+
+        function myfunc(){
+            /*
+            ==============================
+            SELECTING ELEMENTS
+            ==============================
+            */
+
+            // Select input element of type text
+            var userinput = document.querySelector("input[type=text]");
+
+            /*
+            ==============================
+            INPUT ELEMENT PROPERTIES
+            ==============================
+
+            - value     → gets user input
+            - innerText → NOT used with input
+            - innerHTML → NOT used with input
+            */
+
+            // console.log(userinput.innerHTML); ❌ undefined
+            // console.log(userinput.innerText); ❌ undefined
+            // console.log(userinput.value);     ✅ correct
+
+            // Change input value
+            // document.querySelector("input[type=text]").value = "Mansoura";
+
+            // ❌ div elements do NOT have value property
+            // document.querySelector("div").value = "Alex";
+
+            /*
+            ==============================
+            ADD USER INPUT INTO DIV
+            ==============================
+            */
+
+            // Add text (as plain text)
+            // document.getElementsByTagName("div")[0].innerText += "\n\n" + userinput.value;
+
+            // Add text (as HTML)
+            // document.getElementsByTagName("div")[0].innerHTML += userinput.value;
+
+            /*
+            ==============================
+            outerHTML
+            ==============================
+            */
+
+            // document.getElementsByTagName("p")[0].outerHTML
+            // Returns the <p> element itself including its tag
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Input field to enter text -->
+    <input type="text">
+
+    <!-- Button that triggers myfunc() -->
+    <input type="button" value="Add" onclick="myfunc()">
+
+    <!--
+    Div element used as a container
+    Content inside it will be manipulated using DOM
+    -->
+    <div id="mainwrapper">
+        information technology institute
+        <p>ITI Mansoura</p>
+    </div>
+</body>
+</html>

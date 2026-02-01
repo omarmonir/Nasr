@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .styleone{
+            background-color: red;
+            width: 200px;
+            border: 2px solid black;
+        }
+        .styletwo{
+            color: white;
+            font: bold 15px tahoma;
+            text-align: center;
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function applystyleone(){
+            targetp = document.getElementById("pone");
+            // targetp.className = " styleone ";
+            targetp.classList.add("styleone");
+            // //change property in it's style : background-color
+            // targetp.style.backgroundColor = "red";
+            // //width :
+            // targetp.style.width = "200px";
+            // //border :
+            // targetp.style.border = "2px solid blue";
+            // // targetp.style.borderTopLeftRadius = "10px";
+        }
+        function removeystyleone(){
+            targetp = document.getElementById("pone");
+            // targetp.className = "";
+            targetp.classList.remove("styleone");
+            //change property in it's style : background-color
+            // targetp.style.backgroundColor = "white";
+            // //width :
+            // targetp.style.width = "100%";
+            // //border :
+            // targetp.style.border = "none";
+            // targetp.style.borderTopLeftRadius = "10px";
+        }
+        function applystyletwo(){
+            targetp = document.getElementById("pone");
+            // targetp.className += " styletwo ";
+            targetp.classList.add("styletwo");
+            
+        }
+        function removeystyltwo(){
+            targetp = document.getElementById("pone");
+            // targetp.className = "";
+            targetp.classList.remove("styletwo");
+
+            
+        }
+        function tooglefun(){
+            targetp = document.getElementById("pone");
+            targetp.classList.toggle("styleone");
+
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="ChangePOneStyle" onclick="applystyleone()">
+    <input type="button" value="RemovePOneStyle" onclick="removeystyleone()">
+    <input type="button" value="ChangePTwoStyle" onclick="applystyletwo()">
+    <input type="button" value="RemovePTwoStyle" onclick="removeystyltwo()">
+    <input type="button" value="tooglestyleone" onclick="tooglefun()">
+    <p id="pone">ITI</p>
+    <p id="ptwo">Mansoura</p>
+</body>
+</html>
