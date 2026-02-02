@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        table{
+            width: 300px;
+            border: 1px solid black;
+            text-align: center;
+            margin: 10px auto;
+        }
+        tbody>tr:nth-child(odd){
+            background-color: lightcoral;
+        }
+        tbody>tr:nth-child(even){
+            background-color: lightseagreen;
+        }
+        td,th{
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        i =100;
+        function addrowfunc(){
+            //1- get user
+            var userinput = document.querySelector("input[type=text]").value;
+            // document.getElementsByTagName('tbody')[0].innerHTML += "<tr><td>"
+            //     + 200 + "</td><td>" + userinput + "</td></tr>";
+            //2- create tr
+            var createdtr = document.createElement("tr");
+            //created 2 td
+            var tdone = document.createElement("td");
+            //assign for first td: serial increment
+            i = i+100;
+            tdone.innerText = i;
+            //assign for second td: user name
+            var tdtwo = document.createElement("td");
+            tdtwo.innerText = userinput;
+            //3- add created td for created tr
+            createdtr.appendChild(tdone);
+            createdtr.appendChild(tdtwo);
+            //select table
+            //add created tr within table
+
+
+            //create attribute
+            // var createdattr = document.createAttribute("id");
+            // createdattr.value = i;
+            // createdtr.setAttributeNode(createdattr);
+
+            createdtr.setAttribute("id",i);
+
+            document.getElementsByTagName("tbody")[0].appendChild(createdtr);
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <input type="text" />
+        <input type="button" value="AddRow" onclick="addrowfunc()">
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>serial</th>
+                <th>name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>100</td>
+                <td>ahmed</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

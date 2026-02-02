@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script>
+        function addfun(){
+            var dummyh3 = document.createElement("h3");
+            dummyh3.innerText = "Hello World"
+            var targetdiv = document.getElementsByTagName("div")[0];
+            // targetdiv.insertAdjacentElement("beforeBegin",dummyh3)
+            // targetdiv.insertAdjacentElement("afterBegin",dummyh3)
+            // targetdiv.insertAdjacentElement("beforeEnd",dummyh3)
+            targetdiv.insertAdjacentElement("afterEnd",dummyh3)
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="add" onclick="addfun()">
+    <div>
+        <p>First p in  div</p>
+    </div>
+</body>
+</html>
